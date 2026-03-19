@@ -1,6 +1,5 @@
 'use client';
-
-import { motion } from 'framer-motion';
+import { motion, Variants } from "framer-motion";
 import { Mail, Linkedin, Github, Phone, FileText, Download, Eye } from 'lucide-react';
 
 const containerVariants = {
@@ -11,14 +10,14 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, x: -30, filter: 'blur(10px)' },
-  visible: { 
-    opacity: 1, 
-    x: 0, 
+  visible: {
+    opacity: 1,
+    x: 0,
     filter: 'blur(0px)',
     transition: { type: 'spring', stiffness: 80, damping: 20 }
-  },
+  }
 };
 
 export default function ExperienceContact() {
@@ -30,14 +29,14 @@ export default function ExperienceContact() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="max-w-4xl mx-auto">
           {/* Contact */}
-          <motion.div 
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
             className="flex flex-col justify-center"
           >
-            <motion.div 
+            <motion.div
               variants={itemVariants}
               className="p-10 md:p-14 rounded-[3rem] bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 backdrop-blur-2xl shadow-[0_30px_100px_-15px_rgba(0,0,0,0.5)] ring-1 ring-white/5"
             >
@@ -47,11 +46,11 @@ export default function ExperienceContact() {
               <p className="text-gray-400 text-lg mb-12 leading-relaxed">
                 I am actively participating in hackathons and looking for opportunities to bring my passion for data analytics and problem-solving to innovative teams.
               </p>
-              
+
               {/* Resume / CV Section */}
               <div className="flex flex-col xl:flex-row gap-6 mb-12">
-                <motion.div 
-                  whileHover={{ y: -5, scale: 1.02 }} 
+                <motion.div
+                  whileHover={{ y: -5, scale: 1.02 }}
                   className="flex-1 bg-black/40 border border-white/10 hover:border-white/30 transition-all duration-300 rounded-3xl p-6 flex flex-col justify-between shadow-2xl"
                 >
                   <div className="flex items-center mb-6">
@@ -69,9 +68,9 @@ export default function ExperienceContact() {
                     </a>
                   </div>
                 </motion.div>
-                
-                <motion.div 
-                  whileHover={{ y: -5, scale: 1.02 }} 
+
+                <motion.div
+                  whileHover={{ y: -5, scale: 1.02 }}
                   className="flex-1 bg-black/40 border border-white/10 hover:border-white/30 transition-all duration-300 rounded-3xl p-6 flex flex-col justify-between shadow-2xl"
                 >
                   <div className="flex items-center mb-6">
@@ -134,7 +133,7 @@ export default function ExperienceContact() {
               </div>
             </motion.div>
           </motion.div>
-          
+
         </div>
       </div>
     </section>
